@@ -6,6 +6,7 @@
     <insert id="addLocation">
         insert into mygeometry(id,location)
         values(#{id},ST_GeomFromText(#{location},4326))
+        on duplicate key update location=ST_GeomFromText(#{location},4326)
     </insert>
     <select id="getNeighborhood" resultType="com.dxjunkyard.location.domain.resource.Neighborhood">
         select
