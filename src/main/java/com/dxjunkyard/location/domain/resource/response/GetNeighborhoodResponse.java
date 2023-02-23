@@ -13,5 +13,5 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class GetNeighborhoodResponse {
-    private List<Neighbor> nazoList;
+    private List<Neighbor> neighborList;
 }

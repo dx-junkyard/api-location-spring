@@ -6,7 +6,7 @@ import com.dxjunkyard.location.domain.resource.Neighborhood;
 import java.util.List;
 
 @Mapper
-public interface NazoMapper {
+public interface GeometryMapper {
     void addLocation(Integer id, String location);
-    List<Neighborhood> getNeighborhoodNazo(String location);
+    List<Neighborhood> getNeighborhood(String location);
 }

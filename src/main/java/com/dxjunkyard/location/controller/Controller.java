@@ -17,7 +17,7 @@ public class Controller {
     private Logger logger = LoggerFactory.getLogger(Controller.class);
 
     @Autowired
-    private NazoService nazoService;
+    private GeometryService geometryService;
 
     /**
      * ★location
@@ -26,12 +26,12 @@ public class Controller {
     @ResponseBody
     public NormalResponse addLocation(
             @RequestBody AddLocationRequest request){
-        logger.info("nazo API");
+        logger.info("geometry API");
         try {
-            nazoService.addLocation(request);
+            geometryService.addLocation(request);
             return NormalResponse.builder().result("OK").build();
         } catch (Exception e) {
-            logger.info("nazo" + e.getMessage());
+            logger.info("geometry" + e.getMessage());
             return NormalResponse.builder().result("NG").build();
         }
     }
@@ -45,9 +45,9 @@ public class Controller {
             @RequestParam("latitude") String latitude,
             @RequestParam("longitude") String longitude,
             @RequestParam("rangem") Integer rangem) {
-        logger.info("nazo API");
+        logger.info("geometry API");
         try {
-            GetNeighborhoodResponse response = nazoService.getNeighborhoodNazo(latitude, longitude, rangem);
+            GetNeighborhoodResponse response = geometryService.getNeighborhood(latitude, longitude, rangem);
             return response;
         } catch (Exception e) {
             return GetNeighborhoodResponse.builder().build();

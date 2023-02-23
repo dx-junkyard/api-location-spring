@@ -15,7 +15,7 @@ public class SwaggerConfiguration {
     @Bean
     public Docket swaggerSpringMvcPlugin() {
         return new Docket(DocumentationType.SWAGGER_2)
-                .groupName("micro-volunteer-api")    // APIドキュメントをグルーピングするための識別名
+                .groupName("api-location-spring")    // APIドキュメントをグルーピングするための識別名
                 .select()
                 .paths(paths())
                 .build()
@@ -27,8 +27,8 @@ public class SwaggerConfiguration {
     }
 
     private ApiInfo apiInfo() {
-        ApiInfo apiInfo = new ApiInfo("micro-volunteer API", "micro-volunteer platformを利用するためのAPIです。",
-                "v1", "", "http://micro-volunteer-supporter.com", "", "");
+        ApiInfo apiInfo = new ApiInfo("location API", "geometry を利用するためのAPIです。",
+                "v1", "", "https://github.com/dx-junkyard/", "MIT", "");
         return apiInfo;
     }
 }
