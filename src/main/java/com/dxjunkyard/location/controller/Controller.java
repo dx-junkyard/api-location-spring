@@ -41,7 +41,7 @@ public class Controller {
      */
     @GetMapping("/location")
     @ResponseBody
-    public GetNeighborhoodResponse getNeighborhoodNazo(
+    public GetNeighborhoodResponse getNeighborhood(
             @RequestParam("latitude") String latitude,
             @RequestParam("longitude") String longitude,
             @RequestParam("rangem") Integer rangem) {
@@ -57,7 +57,7 @@ public class Controller {
 
     @GetMapping("/hello")
     @ResponseBody
-    public NormalResponse checkin(){
+    public NormalResponse hello(){
         logger.info("疎通確認 URL");
         return NormalResponse.builder().result("OK").build();
     }
