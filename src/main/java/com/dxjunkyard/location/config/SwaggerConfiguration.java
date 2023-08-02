@@ -15,6 +15,7 @@ public class SwaggerConfiguration {
     @Bean
     public Docket swaggerSpringMvcPlugin() {
         return new Docket(DocumentationType.SWAGGER_2)
+		.protocols(new HashSet<>(Arrays.asList("https")))
                 .groupName("api-location-spring")    // APIドキュメントをグルーピングするための識別名
                 .select()
                 .paths(paths())
